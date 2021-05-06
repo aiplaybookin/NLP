@@ -24,7 +24,7 @@ A neural network can have one or more hidden layers.
 
 Here x1 and x2 are two inputs and while training the neural network we try to optimise w1 & w2 weights associated with incoming connections (plus a bias b, similar to intercept in ML).
 
-Output 
+** Output **
 
 y = tanh ( w1 * x1 + w2 * x2 + b )
 
@@ -44,6 +44,9 @@ This learning rate is the step size determining the extend of change in weights 
 
 Very high values of learning rate fails the network to converge to minima thus yielding larger errors on each iteration.
 ![plot](./images_readme/learning_rate.gif)
+
+
+**Learning rate must not be fixed but can also be time-based, step-based and exponential**
 
 ***
 ## 3. Understanding "weights initialization"
@@ -93,6 +96,4 @@ loss)
 So during the backpropagation, we compute partial derivative of the loss function with respect to 
 the weights of the output layer (dL/dW112) and then the hidden layer (dLoss/dW111)
 
-
-optimization and backpropagation, we update the weights param for the connections by  
-computing the loss function. This 
+![plot](./images_readme/chainrule.jpeg)
