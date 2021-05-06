@@ -23,10 +23,23 @@ A neural network neuron has input connections ( similar to brain neuron has dent
 It is basic building block for neural network. One or more neuron stack up to form a hidden layer. 
 A neural network can have one or more hidden layers.
 
-#### A neural network with a single neuron
+#### A neural network with two inputs and a single neuron looks like -
 
 ![plot](./images_readme/neuralnet_aneuron.png)
 
+Here x1 and x2 are two inputs and while training the neural network we try to optimise w1 & w2 weights associated with incoming connections (plus a bias b, similar to intercept in ML).
+
+Output 
+
+y = tanh ( w1 * x1 + w2 * x2 + b )
+
+tanh is the activation function. Other examples of activation functions are sigmoid, ReLU,  Leaky ReLU etc.
+
+##### Why activation function?
+In the absence of activation function output y could result in any value between -inf to +inf and when we have multiple hidden layers this may explode. 
+So we use activation functions as bounding the output upstream say in [0,1]
+
+https://jalammar.github.io/visual-interactive-guide-basics-neural-networks/
 
 ***
 ## Understanding "Learning rate"
