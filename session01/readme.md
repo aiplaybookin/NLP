@@ -34,7 +34,7 @@ tanh is the activation function. Other examples of activation functions are sigm
 In the absence of activation function output y could result in any value between -inf to +inf and when we have multiple hidden layers this may explode. 
 So we use activation functions as bounding the output upstream say in [0,1]
 
-https://jalammar.github.io/visual-interactive-guide-basics-neural-networks/
+[Read more](https://jalammar.github.io/visual-interactive-guide-basics-neural-networks/)
 
 ***
 ## 2. Understanding "Learning rate"
@@ -63,7 +63,7 @@ slow learning (vanishing gradients) respectively.
 2. Xavier initialization
 3. He Weight initialization
 
-Read here - https://www.deeplearning.ai/ai-notes/initialization/
+[Read more](https://www.deeplearning.ai/ai-notes/initialization/)
 
 ***
 ## 4. Understanding "Loss" in neural network
@@ -80,8 +80,19 @@ Choosing a right loss function depends on problem which we are solving - determi
 
 ![plot](./images_readme/lossfunc.JPG)
 
-Read more  - https://www.deeplearning.ai/ai-notes/optimization/
+[Read more](https://www.deeplearning.ai/ai-notes/optimization/)
 
 
 ***
 ## 5. Understanding "chain rule" in gradient flow
+
+During DNN training we have weights param for each of the connections ( in - out from neurons ) and we have
+loss function defined and computed post one forward pass. Next with each iteration we have to update the weights in order to reduc the loss further ( minimise the 
+loss)
+
+So during the backpropagation, we compute partial derivative of the loss function with respect to 
+the weights of the output layer (dL/dW112) and then the hidden layer (dLoss/dW111)
+
+
+optimization and backpropagation, we update the weights param for the connections by  
+computing the loss function. This 
