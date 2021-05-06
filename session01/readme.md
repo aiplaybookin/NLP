@@ -6,12 +6,7 @@ Quest 		: Create a feed forward DNN with 44 parameters
 
 Solution 	: Full code can be found in END2_Session1.ipynb colab file above
 
-Input dimension  = 2
-
-Output = 1
-
-add image here
-
+![plot](./images_readme/4params.jpg)
 
 ***
 ## 1. Understanding "a neural network neuron"
@@ -76,14 +71,14 @@ Read here - https://www.deeplearning.ai/ai-notes/initialization/
 We build NN model to perform a task ( classification, regression, combination of both ). We start by designing/ deciding NN architecture and parameters, 
 These parameters decide how well the NN will perform on training, test data or field data.
 While training, there must be some comparison between actual truth and oberserved output from final NN output which needs to feed back ( done by back propagation)
-for weight updates. 
+for weight updates ( optimization). 
 Thus we need to oberve difference from actual truth to oberserved output from NN. This measure of difference is called Loss. 
 
 The value of loss helps in building trust for NN model developed.
 
-Choosing a right loss function depends on problem which we are solving - model training process and performance.
+Choosing a right loss function depends on problem which we are solving - determines model training and performance.
 
-![plot](./images_readme/loss_func.jpg)
+![plot](./images_readme/lossfunc.jpg)
 
 Read more  - https://www.deeplearning.ai/ai-notes/optimization/
 
