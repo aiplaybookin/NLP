@@ -20,7 +20,7 @@ A neural network can have one or more hidden layers.
 
 #### A neural network with two inputs and a single neuron looks like -
 
-![plot](./images_readme/neuralnet_aneuron.jpg)
+![plot](./images_readme/neuralnet_aneuron.jpg =250x)
 
 Here x1 and x2 are two inputs and while training the neural network we try to optimise w1 & w2 weights associated with incoming connections (plus a bias b, similar to intercept in ML).
 
