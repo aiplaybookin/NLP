@@ -6,7 +6,7 @@ Quest 		: Create a feed forward DNN with 44 parameters
 
 Solution 	: Full code can be found in END2_Session1.ipynb colab file above
 
-![plot](./images_readme/4params.jpg)
+![plot](./images_readme/44params.JPG)
 
 ***
 ## 1. Understanding "a neural network neuron"
@@ -78,7 +78,7 @@ The value of loss helps in building trust for NN model developed.
 
 Choosing a right loss function depends on problem which we are solving - determines model training and performance.
 
-![plot](./images_readme/lossfunc.jpg)
+![plot](./images_readme/lossfunc.JPG)
 
 Read more  - https://www.deeplearning.ai/ai-notes/optimization/
 
