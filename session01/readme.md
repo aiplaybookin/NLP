@@ -11,7 +11,7 @@ Solution 	: Full code can be found in END2_Session1.ipynb colab file above
 ***
 ## 1. Understanding "a neural network neuron"
 
-A neural network neuron is similar to our brain neuron but not same ( brain neuron can store as well as compute but neural network neuron can just store temporary data )
+A neural network neuron is similar to our brain neuron but not same ( brain neuron can store as well as compute but neural network neuron act as memory or signal storage )
 A neural network neuron has input connections ( similar to brain neuron has dentrides ) and output connections ( similar to axon ).
 
 
@@ -31,8 +31,12 @@ y = tanh ( w1 * x1 + w2 * x2 + b )
 tanh is the activation function. Other examples of activation functions are sigmoid, ReLU,  Leaky ReLU etc.
 
 #### Why activation function?
-In the absence of activation function output y could result in any value between -inf to +inf and when we have multiple hidden layers this may explode. 
-So we use activation functions as bounding the output upstream say in [0,1]
+
+In the absence of activation function output y will become just be a linear function. Even if we have 
+multiple layers, each neuron-connections would collapse to one layer of big linear equation. The real worl problems
+which we are trying to solve are not linear but complicated curves (or relationships).
+
+
 
 [Read more](https://jalammar.github.io/visual-interactive-guide-basics-neural-networks/)
 
@@ -43,10 +47,11 @@ While training any neural network we use a configurable hyperparameter "Learning
 This learning rate is the step size determining the extend of change in weights in hidden layers in each iteration ( backpropagation ) during training.
 
 Very high values of learning rate fails the network to converge to minima thus yielding larger errors on each iteration.
+
+Learning rate must not be fixed but can also be **time-based, step-based and exponential**
+
 ![plot](./images_readme/learning_rate.gif)
 
-
-**Learning rate must not be fixed but can also be time-based, step-based and exponential**
 
 ***
 ## 3. Understanding "weights initialization"
@@ -90,10 +95,18 @@ Choosing a right loss function depends on problem which we are solving - determi
 ## 5. Understanding "chain rule" in gradient flow
 
 During DNN training we have weights param for each of the connections ( in - out from neurons ) and we have
-loss function defined and computed post one forward pass. Next with each iteration we have to update the weights in order to reduc the loss further ( minimise the 
+loss function defined and computed, post one forward pass. Next with each iteration we have to update the weights in order to reduc the loss further ( minimise the 
 loss)
 
-So during the backpropagation, we compute partial derivative of the loss function with respect to 
-the weights of the output layer (dL/dW112) and then the hidden layer (dLoss/dW111)
+So during the backpropagation, we compute partial derivative of the loss function 
+with respect to the weights of the output layer (dE_total/dW5) and then the hidden layer 
+(dE_total/dw1). 
 
-![plot](./images_readme/chainrule.jpeg)
+Example : Assume below is the NN and weights ( assume no bias ).
+
+![plot](./images_readme/chainrule_fig.JPG)
+
+Then we can apply chain rule to determine the delta change in weights of network by just expanding the 
+partial derivatives as shown below.
+
+![plot](./images_readme/chainrule_equation.JPG)
