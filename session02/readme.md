@@ -2,7 +2,7 @@
 ***
 ## 🏋️‍♀️ Playing Backpropagation in Excel 🤽‍♀️🏟
 
-** Objective **
+**Objective**
 
 To understand backpropagation and chain rule in Neural Networks
 
@@ -10,7 +10,7 @@ Let's follow the below NN architecture -
 
 ![plot](./images/NN_Architecture.JPG)
 
-Here we have ** 2 inputs (i1 & i2), one hidden layer (in green) and one output layer ( in maroon) **.
+Here we have **2 inputs (i1 & i2), one hidden layer (in green) and one output layer ( in maroon)**.
 
 
 All connections are labelled and assigned with intial weights as shown in figure above.
@@ -23,15 +23,16 @@ Now from basics of neural network we can write below equations,
 
 For hidden layer ( incoming connections w1, w2, w3 & w4 and inputs i1 & i2 ) -
 
-![plot](./images/hiddenlayer1_eq.JPG) ![plot](./images/inputH1.JPG)
+![plot](./images/inputH1.JPG) ![plot](./images/hiddenlayer1_eq.JPG) 
 
 For output layer ( incoming connections w5, w6, w7 & w8 ) - 
 
-![plot](./images/outputlayer_eq.JPG)
+![plot](./images/inputH2.JPG) ![plot](./images/outputlayer_eq.JPG)
 
-Now total *error* is error from T1 and T2, lets call E1 & E2, so -
+As we have two outputs ( assuming T1 and T2 as actual truth outputs), there will be errors in both, 
+lets call E1 & E2. Hence -
 
-![plot](./images/totalerror_eq.JPG)
+![plot](./images/inputH3.JPG) ![plot](./images/inputH3.JPG) ![plot](./images/totalerror_eq.JPG)
 
 
 
