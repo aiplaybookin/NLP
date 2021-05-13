@@ -144,8 +144,7 @@ Similarly for w3 & w4, expanding δE_total/δa_h2
 
 
 
-### This way we have simplified the δE_total wrt δwx and with each iteration we can update the weights (w1, w2, ....w8)
-untill the change in error is flat.
+### This way we have simplified the δE_total wrt δwx and with each iteration, we can update the weights (w1, w2, ....w8) untill the change in error is flat.
 
 ***
 ## Output from Excel Example
@@ -156,6 +155,6 @@ untill the change in error is flat.
 
 ![plot](./images/output3.JPG) 
 
-**Running for learning rate from [0.1, 0.2, 0.5, 0.8, 1.0, 2.0]**
+### Running for learning rate from [0.1, 0.2, 0.5, 0.8, 1.0, 2.0]
 
 ![plot](./images/learningrate.JPG) 
