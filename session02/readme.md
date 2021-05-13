@@ -34,13 +34,11 @@ lets call E1 & E2. Hence -
 
 ![plot](./images/inputH3.JPG) ![plot](./images/totalerror_eq.JPG)
 
-> Assume learning rate η= 0.5 
+> Assume, learning rate η= 0.5 
 
-True Outputs
-> t1 = 0.01			 
-> t2 = 0.99
-
-
+| Output t1       | Output t2     | i1     | i2     |
+| :-------------- | :-----------: | -----: |------: |
+|  0.01           | 0.99          | 0.05   | 0.1    | 
 
 * Additional notes : Activation Functions *
  
