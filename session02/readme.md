@@ -59,12 +59,17 @@ In next subsequent steps we will see Change in **δE_total wrt δwx ( here x = 1
 *Because wrt w5 there is no impact from E2 ( constant), so removing and later applying chain ruleand expanding.*
 
 > δ(E1 +E2)/δw5 = δ(E1)/δw5 = (δE1/δa_o1) * (δa_o1/δo1) * (δo1/δw5)
+
 *Computing separately*
 
 >> δE1/δa_o1 = δ(½ * ( t1 - a_o1)²) /δa_o1= (t1 - a_o1) * (-1) = a_o1 - t1
+
 *We substituted E1 = ½ * ( t1 - a_o1)² & then did partial derivative*
+
 >> δa_o1/δo1 = δ(σ(o1))/δo1 = σ(o1) * (1-σ(o1)) = a_o1 * (1 - a_o1 )
+
 >> δo1/δw5 = a_h1
+
 *Substituted o1 = w5*a_h1 + w6*a_h2 and took derivative wrt δw5*
 
 
