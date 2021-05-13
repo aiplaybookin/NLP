@@ -46,11 +46,14 @@ lets call E1 & E2. Hence -
 
 ![plot](./images/inputH3.JPG) ![plot](./images/totalerror_eq.JPG)
 
-With above basic equations in hand we need to **work on minimizing the error E_total** via backpropagation.
+With above basic equations in hand we need to update the all weights in each iteration in such a way that
+**will minimize the error E_total** via backpropagation.
 
-Change in δE_total wrt δw5 can be written as 
+![plot](./images/updateWeights.png)
 
-> δE_total/δw5 = δ(E1 +E2)/δw5 or
+In next subsequent steps we will see Change in **δE_total wrt δwx ( here x = 1,2,3....8; denoting w1, w2, ...w8)**
+
+> δE_total/δw5 = δ(E1 +E2)/δw5
 
 Because wrt w5 there is no impact from E2 ( constant), so removing and later applying chain rule.
 
