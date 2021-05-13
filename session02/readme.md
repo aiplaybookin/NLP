@@ -1,6 +1,6 @@
 #### Session 2
 ***
-## 🏋️‍♀️ Playing Backpropagation in Excel 🤽‍♀️🏟
+## 🏋️‍♀️ Backpropagation in Excel 🤽‍♀️🏟
 
 **Objective**
 
@@ -32,7 +32,13 @@ For output layer ( incoming connections w5, w6, w7 & w8 ) -
 As we have two outputs ( assuming T1 and T2 as actual truth outputs), there will be errors in both, 
 lets call E1 & E2. Hence -
 
-![plot](./images/inputH3.JPG) ![plot](./images/inputH3.JPG) ![plot](./images/totalerror_eq.JPG)
+![plot](./images/inputH3.JPG) ![plot](./images/totalerror_eq.JPG)
+
+> Assume learning rate η= 0.5 
+
+True Outputs
+> t1 = 0.01			 
+> t2 = 0.99
 
 
 
