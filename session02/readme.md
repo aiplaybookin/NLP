@@ -99,17 +99,31 @@ and for w8,
 > δE_total/δw8 = (a_o2 - t2 ) * a_o2 * (1 - a_o2 ) * a_h2
 
 
-*δE_total/δw1 = δ(E_total)/δa_o1 * δa_o1/δo1 * δo1/δa_h1 * δa_h1/δh1 * δh1/δw1
+Relationship of E_total wrt w1:
 
 **δE_total/δw1**
-
-Relationship of E_total wrt w1:
 
 > δE_total/δw1 = δ(E_total)/δa_o1 * δa_o1/δo1 * δo1/δa_h1 * δa_h1/δh1 * δh1/δw1
 
 > δE_total/δw1 = δ(E_total)/δa_h1 * δa_h1/δh1 * δh1/δw1
 
-> δE_total/δw1 = δ(E_total)/δa_h1 * a_h1 * (1- a_h1) * i1
+*Substituting a_h1 = σ(h1) = 1/(1+exp(-h1)) and then taking derivative wrt δh1*
+
+**δE_total/δw1 = δ(E_total)/δa_h1 * a_h1 * (1- a_h1) * i1**
+
+Similarly,
+
+**δE_total/δw2**
+
+**δE_total/δw2 = δ(E_total)/δa_h1 * a_h1 * (1- a_h1) * i2**
+
+**δE_total/δw3**
+
+**δE_total/δw3 = δ(E_total)/δa_h2 * a_h2 * (1- a_h2) * i1**
+
+**δE_total/δw4**
+
+**δE_total/δw4 = δ(E_total)/δa_h2 * a_h2 * (1- a_h2) * i2**
 
 
 >>> δE_total/δa_h1 = δ(E1+E2)/δa_h1 
@@ -119,7 +133,11 @@ Relationship of E_total wrt w1:
 >>>> δE2/δa_h1 = δE1/δa_o2 * δa_o2/δo2 * δo2/δa_h1 = (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7
 
 
->>> 
+Finally by substituting above δ(E_total)/δa_h1 for δE_total/δw1
+
+####δE_total/δw1
+
+**δE_total/δw1 =( (a_o1 - t1) * a_o1 * (1 - a_o1 ) * w5 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7 )  * a_h1 * (1- a_h1) * i1**
 
 
 
