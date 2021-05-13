@@ -46,13 +46,16 @@ lets call E1 & E2. Hence -
 
 ![plot](./images/inputH3.JPG) ![plot](./images/totalerror_eq.JPG)
 
-With above basic equations in hand we need to *work on minimizing the error E_total.* via backpropagation.
+With above basic equations in hand we need to **work on minimizing the error E_total** via backpropagation.
 
 Change in δE_total wrt δw5 can be written as 
 
 > δE_total/δw5 = δ(E1 +E2)/δw5 or
+
 Because wrt w5 there is no impact from E2 ( constant), so removing and later applying chain rule.
+
 > δ(E1 +E2)/δw5 = δ(E1)/δw5 = (δE1/δa_o1) * (δa_o1/δo1) * (δo1/δw5)
+
 > δ(E1)/δw5 = (δE1/δa_o1) * (δa_o1/δo1) * (δo1/δw5)
 
 
