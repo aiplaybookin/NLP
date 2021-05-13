@@ -68,7 +68,8 @@ In next subsequent steps we will see Change in **δE_total wrt δwx ( here x = 1
 
 >> δa_o1/δo1 = δ(σ(o1))/δo1 = σ(o1) * (1-σ(o1)) = a_o1 * (1 - a_o1 )
 
-*Substituted a_o1 = σ(o1) and took partial derivative of sigmoid*
+*Substituted a_o1 = σ(o1) and took partial derivative of sigmoid : derivative of sigmoid is sigmoid * (1-sigmoid)
+*
 
 >> δo1/δw5 = a_h1
 
@@ -81,17 +82,44 @@ Finally,
 By seeing above equation, we know that δE_total/δw5 depends on a_o1, t1, and a_h1. 
 In similar way we can also write for w6 (as w6 is taking input from a_h2 )
 
+**δE_total/δw6**
+
 > δE_total/δw6 = (a_o1 - t1 ) * a_o1 * (1 - a_o1 ) * **a_h2**
 
 Similarly for w7, 
+
+**δE_total/δw7**
 
 > δE_total/δw7 = (a_o2 - t2 ) * a_o2 * (1 - a_o2 ) * a_h1
 
 and for w8,
 
+**δE_total/δw8**
+
 > δE_total/δw8 = (a_o2 - t2 ) * a_o2 * (1 - a_o2 ) * a_h2
 
 
+*δE_total/δw1 = δ(E_total)/δa_o1 * δa_o1/δo1 * δo1/δa_h1 * δa_h1/δh1 * δh1/δw1
+
+**δE_total/δw1**
+
+Relationship of E_total wrt w1:
+
+> δE_total/δw1 = δ(E_total)/δa_o1 * δa_o1/δo1 * δo1/δa_h1 * δa_h1/δh1 * δh1/δw1
+
+> δE_total/δw1 = δ(E_total)/δa_h1 * δa_h1/δh1 * δh1/δw1
+
+> δE_total/δw1 = δ(E_total)/δa_h1 * a_h1 * (1- a_h1) * i1
+
+
+>>> δE_total/δa_h1 = δ(E1+E2)/δa_h1 
+
+>>>> δE1/δa_h1 = δE1/δa_o1 * δa_o1/δo1 * δo1/δa_h1 = (a_o1 - t1) * a_o1 * (1 - a_o1 ) * w5
+
+>>>> δE2/δa_h1 = δE1/δa_o2 * δa_o2/δo2 * δo2/δa_h1 = (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7
+
+
+>>> 
 
 
 
