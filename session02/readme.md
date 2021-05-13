@@ -14,13 +14,13 @@ Here we have **2 inputs (i1 & i2), one hidden layer (in green) and one output la
 
 
 All connections are labelled and assigned with intial weights as shown in figure above.
-> Assume there are no bias terms, just for the sake of understanding backprop.
-
 
 Assume,
+> There are no bias terms, just for the sake of understanding backprop.
+
 > Learning rate η= 0.5 
 
-Assume below are *true expected outputs t1 & t2. i1 & i2 are inpt values.*
+Assume below are **true expected outputs t1 & t2. i1 & i2 are inpt values.**
 > Just for understanding purpose we will use same inputs and same outputs 
 
 | Output t1       | Output t2     | i1     | i2     |
@@ -49,14 +49,16 @@ lets call E1 & E2. Hence -
 With above basic equations in hand we need to update the all weights in each iteration in such a way that
 **will minimize the error E_total** via backpropagation.
 
+We know -
+
 ![plot](./images/updateWeights.png)
 
-In next subsequent steps we will see Change in **δE_total wrt δwx ( here x = 1,2,3....8; denoting w1, w2, ...w8)**
+In next subsequent steps we will see how to compute **δE_total wrt δwx ( here x = 1,2,3....8; denoting w1, w2, ...w8)**
 
 **δE_total/δw5**
 > δE_total/δw5 = δ(E1 +E2)/δw5
 
-*Because wrt w5 there is no impact from E2 ( constant), so removing and later applying chain ruleand expanding.*
+*Because wrt w5 there is no impact from E2 ( constant), so removing E2 and later applying chain ruleand expanding.*
 
 > δ(E1 +E2)/δw5 = δ(E1)/δw5 = (δE1/δa_o1) * (δa_o1/δo1) * (δo1/δw5)
 
@@ -68,8 +70,7 @@ In next subsequent steps we will see Change in **δE_total wrt δwx ( here x = 1
 
 >> δa_o1/δo1 = δ(σ(o1))/δo1 = σ(o1) * (1-σ(o1)) = a_o1 * (1 - a_o1 )
 
-*Substituted a_o1 = σ(o1) and took partial derivative of sigmoid : derivative of sigmoid is sigmoid * (1-sigmoid)
-*
+*Substituted a_o1 = σ(o1) and took partial derivative of sigmoid : derivative of sigmoid is sigmoid * (1-sigmoid)*
 
 >> δo1/δw5 = a_h1
 
@@ -113,18 +114,13 @@ Relationship of E_total wrt w1:
 
 Similarly,
 
-**δE_total/δw2**
-
 **δE_total/δw2 = δ(E_total)/δa_h1 * a_h1 * (1- a_h1) * i2**
-
-**δE_total/δw3**
 
 **δE_total/δw3 = δ(E_total)/δa_h2 * a_h2 * (1- a_h2) * i1**
 
-**δE_total/δw4**
-
 **δE_total/δw4 = δ(E_total)/δa_h2 * a_h2 * (1- a_h2) * i2**
 
+Expanding δE_total/δa_h1 to simplify further -
 
 >>> δE_total/δa_h1 = δ(E1+E2)/δa_h1 
 
@@ -132,12 +128,24 @@ Similarly,
 
 >>>> δE2/δa_h1 = δE1/δa_o2 * δa_o2/δo2 * δo2/δa_h1 = (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7
 
+Similarly for w3 & w4, expanding δE_total/δa_h2
 
-Finally by substituting above δ(E_total)/δa_h1 for δE_total/δw1
+>>> δE_total/δa_h2 = δ(E1+E2)/δa_h2 
 
-**δE_total/δw1**
+>>>> δE1/δa_h2 = (a_o1 - t1) * a_o1 * (1 - a_o1 ) * w6
+
+>>>> δE2/δa_h2 = (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w8
+
+
+
+*Finally by substituting above δ(E_total)/δa_h1 for δE_total/δw1*
 
 **δE_total/δw1 =( (a_o1 - t1) * a_o1 * (1 - a_o1 ) * w5 + (a_o2 - t2) * a_o2 * (1 - a_o2 ) * w7 )  * a_h1 * (1- a_h1) * i1**
+
+
+
+### This way we have simplified the δE_total wrt δwx and with each iteration we can update the weights (w1, w2, ....w8)
+untill the change in error is flat.
 
 ***
 ## Output from Excel Example
