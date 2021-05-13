@@ -110,3 +110,13 @@ Then we can apply chain rule to determine the delta change in weights of network
 partial derivatives as shown below.
 
 ![plot](./images_readme/chainrule_equation.JPG)
+
+
+
+
+* Additional notes : Activation Functions *
+ 
+It also performs a nonlinear transformation on the input to get better results on a complex neural network.
+Activation function also helps to normalize the output of any input in the range between 1 to -1. Thus reduce the computation time because the neural network sometimes trained on millions of data points.
+
+The sigmoid function causes a problem mainly termed as vanishing gradient problem which occurs because we convert large input in between the range of 0 to 1 and therefore their derivatives become much smaller which does not give satisfactory output.

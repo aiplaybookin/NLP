@@ -148,10 +148,6 @@ Finally by substituting above δ(E_total)/δa_h1 for δE_total/δw1
 
 ![plot](./images/output3.JPG) 
 
-* Additional notes : Activation Functions *
- 
-It also performs a nonlinear transformation on the input to get better results on a complex neural network.
-Activation function also helps to normalize the output of any input in the range between 1 to -1. Thus reduce the computation time because the neural network sometimes trained on millions of data points.
+**Running for learning rate from [0.1, 0.2, 0.5, 0.8, 1.0, 2.0]**
 
-The sigmoid function causes a problem mainly termed as vanishing gradient problem which occurs because we convert large input in between the range of 0 to 1 and therefore their derivatives become much smaller which does not give satisfactory output.
-
+![plot](./images/learningrate.JPG) 
