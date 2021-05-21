@@ -1,15 +1,15 @@
 #### Session 3 
 ***
-## Custom NN 
+## 🦧 Custom NN Pytorch using GPU
 ### 2 Inputs :
 ##### - 1 image i/p from MNIST
 ##### - 1 random number (0-9)
 
 ### 2 Outputs :
 ##### - the "number" that was represented by the MNIST image ( Classification )
-##### - the "sum" of MNIST number with the random number that was generated and sent as the input to the network
+##### - the "sum" of MNIST number with the random number 🤐 that was generated and sent as the input to the network
 
-## Proposed Solution 
+## Proposed Solution 🙌
 ***
 
 ![plot](./images/network.JPG)
@@ -95,7 +95,7 @@ y : binary indicator (0 or 1) if class label c is the correct classification for
 
 p : predicted probability observation o is of class c
 
-#### While Training 
+#### While Training 🤹‍♂️
 We use above defined losses minimise and capture as we train for multiple epochs : understand where are losses more, when it becomes flat, when to stop/ needs fixes
 
 ![plot](./images/logs_epoch.JPG)
