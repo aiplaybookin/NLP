@@ -120,3 +120,5 @@ It also performs a nonlinear transformation on the input to get better results o
 Activation function also helps to normalize the output of any input in the range between 1 to -1. Thus reduce the computation time because the neural network sometimes trained on millions of data points.
 
 The sigmoid function causes a problem mainly termed as vanishing gradient problem which occurs because we convert large input in between the range of 0 to 1 and therefore their derivatives become much smaller which does not give satisfactory output.
+
+[Read more] (https://www.analyticssteps.com/blogs/7-types-activation-functions-neural-network)
