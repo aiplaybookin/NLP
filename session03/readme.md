@@ -64,7 +64,7 @@ the flattened output tensor from CONV Layer 2**
 | Conv 5x5		  	| 	[1,12,8, 8]	  |
 | MaxPool 2x2	 	| 	[1,12,4, 4]   |
 | Flatten(reshape) 	| 	[1, 192]	  |
-| Concate		 	| 	[1, 202]	  |
+| Concate(Input 2) 	| 	[1, 202]	  |
 | FC 1(Linear trans)| 	[1, 120]	  |
 | FC 2(Linear trans)| 	[1, 60] 	  |
 | OP 1(Linear trans)| 	[1, 10] 	  |
@@ -96,15 +96,17 @@ y : binary indicator (0 or 1) if class label c is the correct classification for
 p : predicted probability observation o is of class c
 
 #### While Training 
-We use above defined losses to capture as we train for multiple epochs : understand where are losses more, when it becomes flat, when to stop/ needs fixes
-
-**Loss in MNIST classification**
-**Loss in Adder**
+We use above defined losses minimise and capture as we train for multiple epochs : understand where are losses more, when it becomes flat, when to stop/ needs fixes
 
 ![plot](./images/logs_epoch.JPG)
 
 
 ##### Visualize Training Losses
+**Loss in MNIST classification**
+
+**Loss in Adder**
+
+
 We see that with increase in epoch our model losses reduces and becomes nearly to flat.
 ![plot](./images/TrainLoss.JPG)
 
