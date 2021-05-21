@@ -120,18 +120,17 @@ We observe the **accuracy of test is at 98% for both MNIST classification and Ad
 
 1. Correct Image Class & Correct Addition
 
+![plot](./images/sample_op1.png)
+
 2. Correct Image Class & **Wrong Addition**
+
+![plot](./images/sample_op1.png)
 
 3. **Wrong Image Class** & Correct Addition
 
+![plot](./images/sample_op1.png)
+
 4. Wrong Image Class & **Wrong Addition**
 
-
-#### Accuracy
-
-We must check Accuracy ( correctly predicted / total observation ) for both outputs 
-
-- MNIST
-- ADDER
-
+![plot](./images/sample_op1.png)
 
