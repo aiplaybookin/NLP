@@ -1,13 +1,13 @@
-#### Session 1 
+#### Session 3 
 ***
 ## Custom NN 
 ### 2 Inputs :
 ##### - 1 image i/p from MNIST
-##### - 1 random number 0-9
+##### - 1 random number (0-9)
 
-### 2 Output :
+### 2 Outputs :
 ##### - the "number" that was represented by the MNIST image ( Classification )
-##### - the "sum" of this number with the random number that was generated and sent as the input to the network
+##### - the "sum" of MNIST number with the random number that was generated and sent as the input to the network
 
 ## Proposed Solution 
 ***
@@ -25,8 +25,11 @@ W=28
 Batch = 100 ( we took here )
 
 
-**First i/p tensor** [100,1,28,28] from image per batch
+**First i/p tensor** [100,1,28,28] from image per batch is fed to CONV Layer 1 
 
+
+Flatten Output from CONV Layer 2
+> 12x4x4 = 192
 
 **Second input** is one-hot encoding for digits 0-9 
 we randomly generated , ....
@@ -35,14 +38,24 @@ we randomly generated , ....
 
 >   digits_one = F.one_hot(digits, num_classes=10) # one hot encoding
 
+Adding 10 
+> 192 + 10 = 202
+
+You can see in network below -
+
+![plot](./images/params.JPG)
+
 
 #### Combine the two inputs
 
-As you can see we have combined **random digit** input to first FC Layer. We do so by **concatenating 
+As you can see we have combined **random digit** input to **first FC Layer**. We do so by **concatenating 
 the flattened output tensor from CONV Layer 2**
 
 > t = torch.cat((t, d), dim=1)
 
+#### Understanding CNN i/p (square) & o/p 
+
+![plot](./images/ip_op.JPG)
 
 #### Loss function
 Losses in output layer is evaluated using **Cross Entropy** ( for both outputs )
@@ -55,9 +68,9 @@ For muli-class ( say unique classes = 10 for 0-9 image classes )
 
 **Loss is calculated using separately for each class (one class or rest all classes) label per observation and sum the result.**
 
-![plot](./images/loss funtion.JPG)
+![plot](./images/lossfunction.JPG)
 
-*where*
+*where,*
 
 M : number of classes (0,1,2,3....9)
 
@@ -70,7 +83,7 @@ p : predicted probability observation o is of class c
 
 #### Accuracy
 
-We must check Accuracy ( correctly predicted / total observation ) for 
+We must check Accuracy ( correctly predicted / total observation ) for both outputs 
 
 - MNIST
 - ADDER
