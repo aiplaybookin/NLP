@@ -95,6 +95,35 @@ y : binary indicator (0 or 1) if class label c is the correct classification for
 
 p : predicted probability observation o is of class c
 
+#### While Training 
+We use above defined losses to capture as we train for multiple epochs : understand where are losses more, when it becomes flat, when to stop/ needs fixes
+
+**Loss in MNIST classification**
+**Loss in Adder**
+
+![plot](./images/logs_epoch.JPG)
+
+
+##### Visualize Training Losses
+We see that with increase in epoch our model losses reduces and becomes nearly to flat.
+![plot](./images/TrainLoss.JPG)
+
+We observe the **accuracy of test is at 98% for both MNIST classification and Adder** after 50 epochs.
+![plot](./images/logAccuracy.JPG)
+![plot](./images/finalAccuracy.JPG)
+
+#### Sample Outcomes :
+
+**There could be 4 combinations** -
+
+1. Correct Image Class & Correct Addition
+
+2. Correct Image Class & **Wrong Addition**
+
+3. **Wrong Image Class** & Correct Addition
+
+4. Wrong Image Class & **Wrong Addition**
+
 
 #### Accuracy
 
