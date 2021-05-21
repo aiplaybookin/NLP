@@ -124,13 +124,13 @@ We observe the **accuracy of test is at 98% for both MNIST classification and Ad
 
 2. Correct Image Class & **Wrong Addition**
 
-![plot](./images/sample_op1.png)
+![plot](./images/sample_op2.png)
 
 3. **Wrong Image Class** & Correct Addition
 
-![plot](./images/sample_op1.png)
+![plot](./images/sample_op3.png)
 
 4. Wrong Image Class & **Wrong Addition**
 
-![plot](./images/sample_op1.png)
+![plot](./images/sample_op4.png)
 
