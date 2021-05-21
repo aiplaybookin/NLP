@@ -45,7 +45,6 @@ You can see in network below -
 
 ![plot](./images/params.JPG)
 
-
 #### Combine the two inputs
 
 As you can see we have combined **random digit** input to **first FC Layer**. We do so by **concatenating 
@@ -57,6 +56,11 @@ the flattened output tensor from CONV Layer 2**
 
 ![plot](./images/ip_op.JPG)
 
+--------------------
+Operation			|
+--------------------
+Input 1				|
+--------------------
 #### Loss function
 Losses in output layer is evaluated using **Cross Entropy** ( for both outputs )
 
