@@ -56,11 +56,22 @@ the flattened output tensor from CONV Layer 2**
 
 ![plot](./images/ip_op.JPG)
 
---------------------
-Operation			|
---------------------
-Input 1				|
---------------------
+| Operation	    	| 	Output Shape  |
+| ------------- 	| 	------------- |
+| Input MNIST   	| 	[1,1,28,28]   |
+| Conv 5x5		  	| 	[1,6,24,24]   |
+| MaxPool 2x2	 	| 	[1,6,12,12]   |
+| Conv 5x5		  	| 	[1,12,8, 8]	  |
+| MaxPool 2x2	 	| 	[1,12,4, 4]   |
+| Flatten(reshape) 	| 	[1, 192]	  |
+| Concate		 	| 	[1, 202]	  |
+| FC 1(Linear trans)| 	[1, 120]	  |
+| FC 2(Linear trans)| 	[1, 60] 	  |
+| OP 1(Linear trans)| 	[1, 10] 	  |
+| OP 2(Linear trans)| 	[1, 19] 	  |
+
+
+
 #### Loss function
 Losses in output layer is evaluated using **Cross Entropy** ( for both outputs )
 
