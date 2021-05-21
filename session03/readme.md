@@ -141,3 +141,5 @@ We observe the **accuracy of test is at 98% for both MNIST classification and Ad
 > Decision on Learning rate
 
 > Data Tranformations for MNIST image
+
+> Play with Optimiser 
