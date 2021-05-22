@@ -1,8 +1,18 @@
-# NLP
+# NLP :**N**o :**L**eft :**P**ass 🤣😂
 
-## No
+### Session 1 : Basics of Neural Network
 
-## Left
+### Session 2 : Backpropagation
 
-## Pass 🤣😂
+### Custom NN 
+ - Mix CONV and FC
+ - Multiple Inputs & Outputs
+ - Concatenate / Hack
+ - Loss
+ - GPU usage ( basic )
+ - Sample outputs and final results
 
+
+### RNN and LSTM
+ - Convert RNN to LSTM 
+ - ?
