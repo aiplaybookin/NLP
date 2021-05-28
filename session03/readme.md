@@ -118,19 +118,19 @@ We observe the **accuracy of test is at 98% for both MNIST classification and Ad
 
 **There could be 4 combinations** -
 
-1. Correct Image Class & Correct Addition
+1. Correct Image Class & Correct Output2
 
 ![plot](./images/sample_op1.png)
 
-2. Correct Image Class & **Wrong Addition**
+2. Correct Image Class & **Wrong Output2**
 
 ![plot](./images/sample_op2.png)
 
-3. **Wrong Image Class** & Correct Addition
+3. **Wrong Image Class** & Correct Output2
 
 ![plot](./images/sample_op3.png)
 
-4. **Wrong Image Class** & **Wrong Addition**
+4. **Wrong Image Class** & **Wrong Output2**
 
 ![plot](./images/sample_op4.png)
 
