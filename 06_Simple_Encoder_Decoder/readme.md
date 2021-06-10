@@ -131,7 +131,58 @@ decoder_optimizer = optim.Adam(decoder.parameters(), lr=2e-4)
 
 **Remember** to make zero grad for both optimizers
 
+### Train
+
+def train(encoder, decoder, iterator, encoder_optimizer, decoder_optimizer, criterion):
+    
+    # initialize every epoch 
+    epoch_loss = 0
+    epoch_acc = 0
+    
+    # set the model in training phase
+    encoder.train()  
+    decoder.train()
+    
+    for batch in iterator:
+        
+        # resets the gradients after every batch
+        encoder_optimizer.zero_grad()   
+        decoder_optimizer.zero_grad()   
+        
+        # retrieve text and no. of words
+        tweet, tweet_lengths = batch.tweet  
+        
+        # convert to 1D tensor
+        encoder_out, embedding = encoder(tweet, tweet_lengths)
+        
+        predictions, decoder_out = decoder(encoder_out)
+        predictions = predictions.squeeze() 
+
+        # compute the loss
+        loss = criterion(predictions, batch.label)        
+        
+        # compute the binary accuracy
+        acc = binary_accuracy(predictions, batch.label)   
+        
+        # backpropage the loss and compute the gradients
+        loss.backward()       
+        
+        # update the weights
+        encoder_optimizer.step()
+        decoder_optimizer.step()
+        
+        # loss and accuracy
+        epoch_loss += loss.item()  
+        epoch_acc += acc.item()    
+        
+    return epoch_loss / len(iterator), epoch_acc / len(iterator)
+	
+
+
+
 #### Training Logs
+
+![plot](./images/train_logs.JPG) 
 
 **Loss for train and validation**
 
