@@ -25,9 +25,11 @@ This is how it should look:
 ### Solution
 
 Peek into Data set 
+
 ![plot](./images/dataset_head.JPG)
 
 3 Class - ( 0 : Negative, 1 : Positive, 2 : Neutral )
+
 ![plot](./images/dataset_target.JPG)
 
 #### High level Architecture
@@ -132,9 +134,34 @@ decoder_optimizer = optim.Adam(decoder.parameters(), lr=2e-4)
 #### Training Logs
 
 **Loss for train and validation**
+
 ![plot](./images/loss_logs.JPG) 
 
 **Accuracy for train and validation**
+
 ![plot](./images/accuracy_logs.JPG) 
 
 
+All the "Neutral" class (i.e. 2) records are not being predicted by model
+
+![plot](./images/precision_recall.JPG) 
+
+### Explain and Classify Example Sentences
+
+**Example 1 : Predicted : Positive**
+
+![plot](./images/example1.JPG) 
+
+**Example 2 : Predicted : Negative**
+
+By just replacing the first word **Not** by **The** from the example 1.
+
+![plot](./images/example2.JPG) 
+
+
+### Compare the Median, Mean and Std of Decoder LSTM outputs for both sentence
+
+We find in first sentence **The** has **more positive** value than first word Not in second sentence 
+which might have increased the influence on positive class along with last same word **experience**
+
+![plot](./images/compare.JPG) 
