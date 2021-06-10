@@ -38,10 +38,6 @@ Peek into Data set
 
 #### Encoder
 
-#********************************************************************************
-#******************** Final Econder Class ***************************************
-#********************************************************************************
-
 class Encoder(nn.Module):
     
     # Define all the layers used in model
@@ -77,16 +73,13 @@ class Encoder(nn.Module):
         # encoder o/p for decoder ; embedded for visualization purpose
         return encoder_output, embedded
 
+
 **Total number of trainable params for Encoder class -**
 
 ![plot](./images/encoder_params.JPG)
 
 
 #### Decoder
-
-#********************************************************************************
-#******************** Final Decoder Class ***************************************
-#********************************************************************************
 
 class Decoder(nn.Module):
     
@@ -125,8 +118,10 @@ class Decoder(nn.Module):
 
 As we have two trainable objects - encoder and decoder, we would use 2 optimizers
 
-# define optimizer and loss
+#### Define optimizer and loss
+
 encoder_optimizer = optim.Adam(encoder.parameters(), lr=2e-4)
+
 decoder_optimizer = optim.Adam(decoder.parameters(), lr=2e-4)
 
 
