@@ -164,4 +164,4 @@ By just replacing the first word **Not** by **The** from the example 1.
 We find in first sentence **The** has **more positive** value than first word Not in second sentence 
 which might have increased the influence on positive class along with last same word **experience**
 
-![plot](./images/compare.JPG) 
+![plot](./images/example_compare.JPG) 
