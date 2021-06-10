@@ -199,11 +199,11 @@ All the "Neutral" class (i.e. 2) records are not being predicted by model
 
 ### Explain and Classify Example Sentences
 
-**Example 1 : Predicted : Positive**
+**Example 1 - *The best Experience* (Predicted : Positive)**
 
 ![plot](./images/example1.JPG) 
 
-**Example 2 : Predicted : Negative**
+**Example 2 - *Not best Experience* (Predicted : Negative)**
 
 By just replacing the first word **Not** by **The** from the example 1.
 
