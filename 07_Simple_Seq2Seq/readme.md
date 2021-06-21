@@ -176,7 +176,45 @@ NOTE: Loss is calcuated using avg of token by token comparison.
 
 ### Understanding - Train
 
+1. Iterate and get a batch 
+	
+	a. Get SRC and TRG tokens for batch 
+	
+	b. Make the gradient zero
+	
+	c. Pass the SRC and TRG tokens to seq2seq model and get output
+	
+	d. Flatten the output
+	
+	e. Remove the first item from flattened output ( remember first input tojen was <sos> so it's 
+	coresponding output would be 0 and we ignore so that it doesn't add to losses.
+	
+	f. Compute loss using backward prop
+	
+	g. ```Clip``` prevents gradient exploding
+	
+	```
+	torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
+	```
+	
+	h. Add the loss
+	
+2. Return avg loss 
+
 ### Understanding - Evaluate
+
+Similar to train except 
+
+1. Use ```model.eval()``` : This prevents from using dropouts 
+
+2. Use ```torch.no_grad()``` : We don't want to compute gradients for backprop
+
+3. Do not use ```Teacher param``` : Turn off using 0
+
+```
+output = model(src, trg, 0)
+```
+
 
 ### Understanding - Training
 
