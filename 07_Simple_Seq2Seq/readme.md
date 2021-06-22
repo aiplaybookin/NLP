@@ -4,14 +4,18 @@
 
 ### Task
 
-Starter code  [Colab](https://colab.research.google.com/drive/1wxfX9cmtuo1mz5uYQyQyVUhQyB5Cih_A?usp=sharing "Google Colab")
-
 Train Model on following datasets
 
 1. http://www.cs.cmu.edu/~ark/QA-data/
 
+A corpus of Wikipedia articles, manually-generated factoid questions from them, and 
+manually-generated answers to these questions, for use in academic research.
+
 2. https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs
 
+A set of Quora questions to determine whether pairs of question texts actually correspond 
+to semantically equivalent queries. More than 400,000 lines of potential questions duplicate 
+question pairs.
 
 [Dataset source](https://kili-technology.com/blog/chatbot-training-datasets/)
 
@@ -216,12 +220,11 @@ output = model(src, trg, 0)
 ```
 
 
-### Understanding - Training
+### Training Logs
 
 ### Final Model Performance Metrics
 
 ### Few Predictions and Comparison
-
 
 ### Points to Ponder upon
 
