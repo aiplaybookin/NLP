@@ -229,6 +229,7 @@ manually-generated answers to these questions, for use in academic research.
 
 #### Training Logs
 
+```
 Epoch: 01 | Time: 0m 4s
 	Train Loss: 5.276 | Train PPL: 195.494
 	 Test Loss: 4.759 |   Test PPL: 116.601
@@ -364,6 +365,8 @@ Epoch: 44 | Time: 0m 3s
 Epoch: 45 | Time: 0m 3s
 	Train Loss: 0.237 | Train PPL:   1.267
 	 Test Loss: 1.486 |   Test PPL:   4.420
+
+```
 
 ![plot](./images/lossQA.JPG)
 
