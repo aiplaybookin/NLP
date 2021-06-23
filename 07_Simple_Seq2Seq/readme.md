@@ -220,11 +220,219 @@ output = model(src, trg, 0)
 ```
 
 
-### Training Logs
+### Dataset - 1
 
-### Final Model Performance Metrics
+[Data-1](http://www.cs.cmu.edu/~ark/QA-data/)
 
-### Few Predictions and Comparison
+A corpus of Wikipedia articles, manually-generated factoid questions from them, and 
+manually-generated answers to these questions, for use in academic research.
+
+#### Training Logs
+
+Epoch: 01 | Time: 0m 4s
+	Train Loss: 5.276 | Train PPL: 195.494
+	 Test Loss: 4.759 |   Test PPL: 116.601
+Epoch: 02 | Time: 0m 3s
+	Train Loss: 4.646 | Train PPL: 104.166
+	 Test Loss: 4.530 |   Test PPL:  92.723
+Epoch: 03 | Time: 0m 3s
+	Train Loss: 4.430 | Train PPL:  83.937
+	 Test Loss: 4.375 |   Test PPL:  79.449
+Epoch: 04 | Time: 0m 3s
+	Train Loss: 4.250 | Train PPL:  70.120
+	 Test Loss: 4.290 |   Test PPL:  72.957
+Epoch: 05 | Time: 0m 4s
+	Train Loss: 4.135 | Train PPL:  62.467
+	 Test Loss: 4.244 |   Test PPL:  69.699
+Epoch: 06 | Time: 0m 3s
+	Train Loss: 4.005 | Train PPL:  54.897
+	 Test Loss: 4.191 |   Test PPL:  66.067
+Epoch: 07 | Time: 0m 3s
+	Train Loss: 3.881 | Train PPL:  48.481
+	 Test Loss: 4.092 |   Test PPL:  59.861
+Epoch: 08 | Time: 0m 3s
+	Train Loss: 3.726 | Train PPL:  41.526
+	 Test Loss: 4.016 |   Test PPL:  55.484
+Epoch: 09 | Time: 0m 3s
+	Train Loss: 3.583 | Train PPL:  35.968
+	 Test Loss: 3.951 |   Test PPL:  51.994
+Epoch: 10 | Time: 0m 3s
+	Train Loss: 3.445 | Train PPL:  31.345
+	 Test Loss: 3.863 |   Test PPL:  47.626
+Epoch: 11 | Time: 0m 3s
+	Train Loss: 3.299 | Train PPL:  27.087
+	 Test Loss: 3.847 |   Test PPL:  46.835
+Epoch: 12 | Time: 0m 3s
+	Train Loss: 3.132 | Train PPL:  22.920
+	 Test Loss: 3.787 |   Test PPL:  44.142
+Epoch: 13 | Time: 0m 3s
+	Train Loss: 3.001 | Train PPL:  20.112
+	 Test Loss: 3.680 |   Test PPL:  39.637
+Epoch: 14 | Time: 0m 3s
+	Train Loss: 2.821 | Train PPL:  16.795
+	 Test Loss: 3.671 |   Test PPL:  39.293
+Epoch: 15 | Time: 0m 3s
+	Train Loss: 2.645 | Train PPL:  14.077
+	 Test Loss: 3.508 |   Test PPL:  33.383
+Epoch: 16 | Time: 0m 3s
+	Train Loss: 2.462 | Train PPL:  11.723
+	 Test Loss: 3.430 |   Test PPL:  30.889
+Epoch: 17 | Time: 0m 3s
+	Train Loss: 2.201 | Train PPL:   9.034
+	 Test Loss: 3.457 |   Test PPL:  31.736
+Epoch: 18 | Time: 0m 3s
+	Train Loss: 2.088 | Train PPL:   8.073
+	 Test Loss: 3.409 |   Test PPL:  30.225
+Epoch: 19 | Time: 0m 3s
+	Train Loss: 1.910 | Train PPL:   6.753
+	 Test Loss: 3.228 |   Test PPL:  25.232
+Epoch: 20 | Time: 0m 3s
+	Train Loss: 1.698 | Train PPL:   5.463
+	 Test Loss: 3.145 |   Test PPL:  23.212
+Epoch: 21 | Time: 0m 3s
+	Train Loss: 1.477 | Train PPL:   4.379
+	 Test Loss: 3.022 |   Test PPL:  20.527
+Epoch: 22 | Time: 0m 3s
+	Train Loss: 1.293 | Train PPL:   3.643
+	 Test Loss: 2.807 |   Test PPL:  16.565
+Epoch: 23 | Time: 0m 3s
+	Train Loss: 1.152 | Train PPL:   3.163
+	 Test Loss: 2.681 |   Test PPL:  14.593
+Epoch: 24 | Time: 0m 3s
+	Train Loss: 0.985 | Train PPL:   2.678
+	 Test Loss: 2.506 |   Test PPL:  12.258
+Epoch: 25 | Time: 0m 3s
+	Train Loss: 0.855 | Train PPL:   2.351
+	 Test Loss: 2.234 |   Test PPL:   9.333
+Epoch: 26 | Time: 0m 3s
+	Train Loss: 0.703 | Train PPL:   2.020
+	 Test Loss: 2.250 |   Test PPL:   9.487
+Epoch: 27 | Time: 0m 3s
+	Train Loss: 0.662 | Train PPL:   1.938
+	 Test Loss: 2.044 |   Test PPL:   7.724
+Epoch: 28 | Time: 0m 3s
+	Train Loss: 0.606 | Train PPL:   1.834
+	 Test Loss: 2.119 |   Test PPL:   8.325
+Epoch: 29 | Time: 0m 3s
+	Train Loss: 0.491 | Train PPL:   1.634
+	 Test Loss: 2.146 |   Test PPL:   8.547
+Epoch: 30 | Time: 0m 3s
+	Train Loss: 0.499 | Train PPL:   1.647
+	 Test Loss: 1.847 |   Test PPL:   6.340
+Epoch: 31 | Time: 0m 3s
+	Train Loss: 0.468 | Train PPL:   1.596
+	 Test Loss: 1.874 |   Test PPL:   6.512
+Epoch: 32 | Time: 0m 3s
+	Train Loss: 0.410 | Train PPL:   1.507
+	 Test Loss: 1.907 |   Test PPL:   6.733
+Epoch: 33 | Time: 0m 3s
+	Train Loss: 0.393 | Train PPL:   1.481
+	 Test Loss: 1.604 |   Test PPL:   4.971
+Epoch: 34 | Time: 0m 3s
+	Train Loss: 0.362 | Train PPL:   1.437
+	 Test Loss: 1.687 |   Test PPL:   5.403
+Epoch: 35 | Time: 0m 3s
+	Train Loss: 0.356 | Train PPL:   1.428
+	 Test Loss: 1.735 |   Test PPL:   5.670
+Epoch: 36 | Time: 0m 3s
+	Train Loss: 0.346 | Train PPL:   1.413
+	 Test Loss: 1.509 |   Test PPL:   4.522
+Epoch: 37 | Time: 0m 3s
+	Train Loss: 0.302 | Train PPL:   1.353
+	 Test Loss: 1.559 |   Test PPL:   4.755
+Epoch: 38 | Time: 0m 3s
+	Train Loss: 0.264 | Train PPL:   1.303
+	 Test Loss: 1.553 |   Test PPL:   4.727
+Epoch: 39 | Time: 0m 3s
+	Train Loss: 0.271 | Train PPL:   1.311
+	 Test Loss: 1.586 |   Test PPL:   4.883
+Epoch: 40 | Time: 0m 3s
+	Train Loss: 0.289 | Train PPL:   1.334
+	 Test Loss: 1.392 |   Test PPL:   4.021
+Epoch: 41 | Time: 0m 3s
+	Train Loss: 0.302 | Train PPL:   1.352
+	 Test Loss: 1.462 |   Test PPL:   4.315
+Epoch: 42 | Time: 0m 3s
+	Train Loss: 0.286 | Train PPL:   1.332
+	 Test Loss: 1.437 |   Test PPL:   4.208
+Epoch: 43 | Time: 0m 3s
+	Train Loss: 0.298 | Train PPL:   1.348
+	 Test Loss: 1.412 |   Test PPL:   4.105
+Epoch: 44 | Time: 0m 3s
+	Train Loss: 0.239 | Train PPL:   1.270
+	 Test Loss: 1.377 |   Test PPL:   3.963
+Epoch: 45 | Time: 0m 3s
+	Train Loss: 0.237 | Train PPL:   1.267
+	 Test Loss: 1.486 |   Test PPL:   4.420
+
+![plot](./images/lossQA.JPG)
+
+#### Final Model Performance Metrics
+
+```
+| Test Loss: 1.377 | Test PPL:   3.963 |
+```
+
+#### Few Predictions and Comparison
+
+```
+**************************************************
+Input Quest    :  Who also discovered that less than three percent of kangaroos exposed to the virus developed blindness ?
+Predicted Quest:  veterinarians
+Actual Quest 2 :  Veterinarians
+**************************************************
+Input Quest    :  Is Fillmore the first of two presidents to have been an indentured servant ?
+Predicted Quest:  yes
+Actual Quest 2 :  yes
+**************************************************
+Input Quest    :  When did Monroe's presidency expired?
+Predicted Quest:  march 4 , 1825 .
+Actual Quest 2 :  March 4, 1825
+**************************************************
+Input Quest    :  Does salmon remain the favorite of fly rod enthusiasts?
+Predicted Quest:  yes
+Actual Quest 2 :  Yes
+**************************************************
+Input Quest    :  Did ford get an award called "Congressman's congressman"?
+Predicted Quest:  yes
+Actual Quest 2 :  Yes
+**************************************************
+Input Quest    :  What is the primary item in an otter's diet?
+Predicted Quest:  fish
+Actual Quest 2 :  fish
+**************************************************
+Input Quest    :  Was James Cook the first to record the name "Kangooroo?"
+Predicted Quest:  yes
+Actual Quest 2 :  Yes
+**************************************************
+Input Quest    :  Did the Dutch build the Elmina Castle?
+Predicted Quest:  no
+Actual Quest 2 :  no
+**************************************************
+Input Quest    :  What positions Ford played in the school football team?
+Predicted Quest:  center and linebacker
+Actual Quest 2 :  Captain
+**************************************************
+Input Quest    :  What did James Monroe make in 1817?
+Predicted Quest:  two long tours
+Actual Quest 2 :  two long tours
+```
+
+### Dataset - 2
+
+[Data-2](https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs)
+
+A set of Quora questions to determine whether pairs of question texts actually correspond 
+to semantically equivalent queries. More than 400,000 lines of potential questions duplicate 
+question pairs.
+
+#### Training Logs
+
+#### Final Model Performance Metrics
+
+#### Few Predictions and Comparison
+
+
 
 ### Points to Ponder upon
 
