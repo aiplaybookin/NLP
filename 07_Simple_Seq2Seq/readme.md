@@ -19,10 +19,10 @@ A set of Quora questions to determine whether pairs of question texts actually c
 to semantically equivalent queries. More than 400,000 lines of potential questions duplicate 
 question pairs.
 
+#### [Solution link in Colab](https://colab.research.google.com/drive/1Y1-dc6i_HgVyNvo5SYmW8rmlH6pbbL91?usp=sharing)
+
 [Dataset source](https://kili-technology.com/blog/chatbot-training-datasets/)
 
-
-#### [Solution link in Colab](https://colab.research.google.com/drive/1Y1-dc6i_HgVyNvo5SYmW8rmlH6pbbL91?usp=sharing)
 
 ### Data pre-processing
 
