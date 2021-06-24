@@ -11,7 +11,7 @@ Train Model on following datasets
 A corpus of Wikipedia articles, manually-generated factoid questions from them, and 
 manually-generated answers to these questions, for use in academic research.
 
-### [Solution in Colab](https://colab.research.google.com/drive/1A5P8cz8B5vexEGhEZiHkYf96VBuClUUI?usp=sharing)
+#### [Solution link in Colab](https://colab.research.google.com/drive/1A5P8cz8B5vexEGhEZiHkYf96VBuClUUI?usp=sharing)
 
 2. https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs
 
@@ -22,7 +22,7 @@ question pairs.
 [Dataset source](https://kili-technology.com/blog/chatbot-training-datasets/)
 
 
-### [Solution in Colab](https://colab.research.google.com/drive/1Y1-dc6i_HgVyNvo5SYmW8rmlH6pbbL91?usp=sharing)
+#### [Solution link in Colab](https://colab.research.google.com/drive/1Y1-dc6i_HgVyNvo5SYmW8rmlH6pbbL91?usp=sharing)
 
 ### Data pre-processing
 
@@ -105,6 +105,8 @@ import os, pickle
 with open(F"./gdrive/MyDrive/NLP/tokenizer.pkl", 'wb') as tokens:
   pickle.dump( SRC.vocab.stoi, tokens)
 ```  
+
+![plot](./images/architecture.JPG)
 
 ### Understanding - Encoder
 
