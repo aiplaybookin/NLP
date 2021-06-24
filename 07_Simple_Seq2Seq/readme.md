@@ -11,6 +11,8 @@ Train Model on following datasets
 A corpus of Wikipedia articles, manually-generated factoid questions from them, and 
 manually-generated answers to these questions, for use in academic research.
 
+### [Solution in Colab](https://colab.research.google.com/drive/1A5P8cz8B5vexEGhEZiHkYf96VBuClUUI?usp=sharing)
+
 2. https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs
 
 A set of Quora questions to determine whether pairs of question texts actually correspond 
@@ -18,6 +20,9 @@ to semantically equivalent queries. More than 400,000 lines of potential questio
 question pairs.
 
 [Dataset source](https://kili-technology.com/blog/chatbot-training-datasets/)
+
+
+### [Solution in Colab](https://colab.research.google.com/drive/1Y1-dc6i_HgVyNvo5SYmW8rmlH6pbbL91?usp=sharing)
 
 ### Data pre-processing
 
@@ -219,6 +224,70 @@ Similar to train except
 output = model(src, trg, 0)
 ```
 
+### Prediction Function
+
+```
+def rephraseQuestion(ques, SRC, TRG, model, maxLength = 100):
+  model.eval()
+
+  # tokenize
+  tokenized = [tok.text.lower() for tok in nlp.tokenizer(ques)] 
+  #print('tokenized: ', tokenized)
+
+  # add <sos> and add <eos>
+  tokenized = ['<sos>'] + tokenized + ['<eos>']
+  #print('tokenized: ', tokenized)
+
+  # convert to integer sequence using predefined tokenizer dictionary
+  indexed = [SRC.vocab.stoi[t] for t in tokenized]        
+  #print('indexed: ', indexed)
+
+  # compute no. of words        
+  length = [len(indexed)]
+  #print('length : ', length)
+
+  # convert to tensor                                    
+  tensor = torch.LongTensor(indexed).to(device)   
+  #print('tensor shape: ', tensor.shape)
+
+  # reshape in form of batch, no. of words           
+  tensor = tensor.unsqueeze(1) 
+  #print('tensor shape: ', tensor.shape)
+
+
+  with torch.no_grad():
+    hidden, cell = model.encoder(tensor)
+
+  #first input to the decoder is the <sos> tokens
+  trg_indexes = [TRG.vocab.stoi[TRG.init_token]]
+
+  for t in range(1, maxLength):
+      
+      trg_tensor = torch.LongTensor([trg_indexes[-1]]).to(device)
+      #insert input token embedding, previous hidden and previous cell states
+      
+	  #receive output tensor (predictions) and new hidden and cell states
+      with torch.no_grad():
+        output, hidden, cell = model.decoder(trg_tensor, hidden, cell)
+            
+      #get the highest predicted token from our predictions
+      pred_token = output.argmax(1).item()
+      #print(pred_token)
+
+
+      trg_indexes.append(pred_token)
+
+      if pred_token == TRG.vocab.stoi[TRG.eos_token]:
+              break
+      
+  trg_tokens = [TRG.vocab.itos[i] for i in trg_indexes]
+  words = trg_tokens[1:(len(trg_tokens)-1)]
+
+  pred = ' '.join(words) 
+
+  return pred
+  
+```
 
 ### Dataset - 1
 
@@ -431,10 +500,127 @@ question pairs.
 
 #### Training Logs
 
+
+```
+Epoch: 01 | Time: 4m 36s
+	Train Loss: 5.004 | Train PPL: 148.934
+	 Test Loss: 4.777 |   Test PPL: 118.765
+Epoch: 02 | Time: 4m 35s
+	Train Loss: 4.235 | Train PPL:  69.060
+	 Test Loss: 4.378 |   Test PPL:  79.655
+Epoch: 03 | Time: 4m 36s
+	Train Loss: 3.834 | Train PPL:  46.235
+	 Test Loss: 4.164 |   Test PPL:  64.343
+Epoch: 04 | Time: 4m 36s
+	Train Loss: 3.554 | Train PPL:  34.939
+	 Test Loss: 4.018 |   Test PPL:  55.574
+Epoch: 05 | Time: 4m 37s
+	Train Loss: 3.355 | Train PPL:  28.652
+	 Test Loss: 3.907 |   Test PPL:  49.737
+Epoch: 06 | Time: 4m 36s
+	Train Loss: 3.190 | Train PPL:  24.281
+	 Test Loss: 3.837 |   Test PPL:  46.374
+Epoch: 07 | Time: 4m 33s
+	Train Loss: 3.061 | Train PPL:  21.358
+	 Test Loss: 3.767 |   Test PPL:  43.241
+Epoch: 08 | Time: 4m 35s
+	Train Loss: 2.934 | Train PPL:  18.808
+	 Test Loss: 3.703 |   Test PPL:  40.564
+Epoch: 09 | Time: 4m 33s
+	Train Loss: 2.832 | Train PPL:  16.984
+	 Test Loss: 3.651 |   Test PPL:  38.511
+Epoch: 10 | Time: 4m 34s
+	Train Loss: 2.742 | Train PPL:  15.523
+	 Test Loss: 3.643 |   Test PPL:  38.196
+Epoch: 11 | Time: 4m 33s
+	Train Loss: 2.662 | Train PPL:  14.323
+	 Test Loss: 3.625 |   Test PPL:  37.517
+Epoch: 12 | Time: 4m 33s
+	Train Loss: 2.586 | Train PPL:  13.274
+	 Test Loss: 3.582 |   Test PPL:  35.952
+Epoch: 13 | Time: 4m 33s
+	Train Loss: 2.534 | Train PPL:  12.603
+	 Test Loss: 3.548 |   Test PPL:  34.736
+Epoch: 14 | Time: 4m 33s
+	Train Loss: 2.459 | Train PPL:  11.689
+	 Test Loss: 3.559 |   Test PPL:  35.144
+Epoch: 15 | Time: 4m 33s
+	Train Loss: 2.405 | Train PPL:  11.081
+	 Test Loss: 3.548 |   Test PPL:  34.745
+Epoch: 16 | Time: 4m 33s
+	Train Loss: 2.357 | Train PPL:  10.556
+	 Test Loss: 3.532 |   Test PPL:  34.195
+Epoch: 17 | Time: 4m 33s
+	Train Loss: 2.309 | Train PPL:  10.064
+	 Test Loss: 3.516 |   Test PPL:  33.642
+Epoch: 18 | Time: 4m 33s
+	Train Loss: 2.256 | Train PPL:   9.542
+	 Test Loss: 3.513 |   Test PPL:  33.558
+Epoch: 19 | Time: 4m 34s
+	Train Loss: 2.205 | Train PPL:   9.073
+	 Test Loss: 3.539 |   Test PPL:  34.438
+Epoch: 20 | Time: 4m 33s
+	Train Loss: 2.170 | Train PPL:   8.754
+	 Test Loss: 3.509 |   Test PPL:  33.404
+Epoch: 21 | Time: 4m 34s
+	Train Loss: 2.137 | Train PPL:   8.475
+	 Test Loss: 3.505 |   Test PPL:  33.269
+Epoch: 22 | Time: 4m 33s
+	Train Loss: 2.095 | Train PPL:   8.129
+	 Test Loss: 3.525 |   Test PPL:  33.955
+```
+
+![plot](./images/lossQQ.JPG)
+
 #### Final Model Performance Metrics
 
-#### Few Predictions and Comparison
+```
+| Test Loss: 3.505 | Test PPL:  33.269 |
+```
 
+#### Few Predictions and Comparison
+```
+**************************************************
+Input Quest    :  What is it like when the wife is older than the husband?
+Predicted Quest:  what is it like to be a elder elder elder ?
+Actual Quest 2 :  How does it feel for a wife to be elder than the husband?
+**************************************************
+Input Quest    :  Where can I get very friendly property transactions services in Sydney?
+Predicted Quest:  where can i get best support property transactions in sydney ?
+Actual Quest 2 :  Where can I get best property transaction support in Sydney?
+**************************************************
+Input Quest    :  What do you want from life?
+Predicted Quest:  what do you want to do in your life ?
+Actual Quest 2 :  What you want to do in your life?
+**************************************************
+Input Quest    :  What are some interesting facts about medicine?
+Predicted Quest:  what are some interesting facts about <unk> ?
+Actual Quest 2 :  What are some insane facts about medicine?
+**************************************************
+Input Quest    :  Why are some people so insecure?
+Predicted Quest:  why are people so insecure ?
+Actual Quest 2 :  Why are so many people insecure?
+**************************************************
+Input Quest    :  I wanna start preparing for ias exam, how should I proceed?
+Predicted Quest:  how do i start preparing for ias exam ?
+Actual Quest 2 :  How should I start preparing for UPSC(IAS) exams?
+**************************************************
+Input Quest    :  How do you improve your programming skills?
+Predicted Quest:  how can i improve my programming skills ?
+Actual Quest 2 :  Sir how to increase programming skills?
+**************************************************
+Input Quest    :  What are some mind-blowing mobile inventions that exist that most people don't know about?
+Predicted Quest:  what are some mind - blowing mobile tools that exist that most people do n't know about ?
+Actual Quest 2 :  What are some mind blowing phone tech Inventions that most people don't know about?
+**************************************************
+Input Quest    :  How can one invest ₹10,000, and in what way?
+Predicted Quest:  how can i invest the ?
+Actual Quest 2 :  How do I invest ₹10,000?
+**************************************************
+Input Quest    :  What conspiracy theories turned out to be true?
+Predicted Quest:  what is the most unlikely conspiracy theories that turned out to be true ?
+Actual Quest 2 :  What is a conspiracy theory that turned out to be real?
+```
 
 
 ### Points to Ponder upon
