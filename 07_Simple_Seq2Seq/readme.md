@@ -21,7 +21,27 @@ question pairs.
 
 #### [Solution link in Colab](https://colab.research.google.com/drive/1Y1-dc6i_HgVyNvo5SYmW8rmlH6pbbL91?usp=sharing)
 
+
+3. https://www.tau-nlp.org/commonsenseqa
+
+CommonsenseQA is a new multiple-choice question answering dataset that requires different types of commonsense knowledge to predict the correct answers . It contains 12,102 questions with one correct answer and four distractor answers.
+
+
+#### [Solution link in Colab](https://colab.research.google.com/drive/1jWjXI0UVJe85XnLWf39WZHKY9bm6ej-e?usp=sharing)
+
+
+Answering the Questions using Doc (sequence of Token) similarity
+
+1. Randomly select a Question
+
+2. Compare similarity of Question with each Choice ( Answer )
+
+3. Predict one with Maximum Similarity score
+
+
 [Dataset source](https://kili-technology.com/blog/chatbot-training-datasets/)
+
+
 
 
 ### Data pre-processing
