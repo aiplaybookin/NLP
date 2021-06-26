@@ -6,17 +6,14 @@
 
 ### Data Pre-processing
 
-Below file contains Text sentences Dataset ( 11286 rows )
+```datasetSentences.txt``` file contains Text sentences Dataset ( 11286 rows )
 
-```datasetSentences.txt to datasetSentences.txt```
 
-Below file contains mapping from Sentences to its Phrases ( one to many )
+```dictionary.txt``` file contains mapping from Sentences to its Phrases ( one to many )
 
-```dictionary.txt to dictionary.txt```
 
-Below file contains sentiment labels for Phrase (above dataset )
+```sentiment_labels.txt``` file contains sentiment labels for Phrase (above dataset )
 
-```sentiment_labels.txt to sentiment_labels.txt```
 
 **Join Phrase and Labels file using LEFT JOIN** , lets call this data frame `mergedPhrases`
 ```
