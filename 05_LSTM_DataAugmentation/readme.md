@@ -1,7 +1,7 @@
 ***
 ## 1. Simple Multiclass Classification ( Without Augmentation )
 
-*[Solution Google Colab](https://colab.research.google.com/drive/1Tqv8AQff8OX4ozYksaQ1AqS26ZarBf-1?usp=sharing)
+*[Solution Google Colab](https://colab.research.google.com/drive/1Tqv8AQff8OX4ozYksaQ1AqS26ZarBf-1?usp=sharing)*
 
 
 ### Data Pre-processing
@@ -52,13 +52,16 @@ sentiment_labels['label'] = sentiment_labels.sentiment_values.apply(createClass)
 ```
 
 Class Distribution
+
 ![plot](./images/classDistribution.JPG)
 
 Sample Dataset
+
 ![plot](./images/exampleData.JPG)
 
 
 Model and Number of Trainable Params
+
 ![plot](./images/numParams.JPG)
 
 
@@ -231,6 +234,10 @@ Epoch: 55 | Epoch Time: 0m 2s
 	Train Loss: 0.305 | Train Acc: 88.71%
 	 Val. Loss: 3.206 |  Val. Acc: 41.21%
 ```
+
+### Accuracy
+
+Overfitted on Train dataset
 
 ![plot](./images/accuracy.JPG)
 
