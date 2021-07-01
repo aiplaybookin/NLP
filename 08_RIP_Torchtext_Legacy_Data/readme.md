@@ -6,8 +6,14 @@
 
 [Solution Colab link : code 2 - Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](https://colab.research.google.com/drive/1YlZ3ptpgDZHiAeJmPE-PWAqimfbHhJb2?usp=sharing)
 
+### Train Logs
+![plot](./images/train_logs2.JPG)
 
-[Solution Colab link : code 3 - Neural Machine Translation by Jointly Learning to Align and Translate]
+
+[Solution Colab link : code 3 - Neural Machine Translation by Jointly Learning to Align and Translate](https://colab.research.google.com/drive/1Y3m44Q7KzmKJgqHfZ4RokaoSedpnJhQS?usp=sharing)
+
+### Train Logs
+![plot](./images/train_logs3.JPG)
 
 
 ### 1. To create Tokens
@@ -171,9 +177,6 @@ for src, tgt in val_dataloader:
 
   break
 ```
-
-### Train Logs
-![plot](./images/train logs.JPG)
 
 
 ### 10 Sample Results
