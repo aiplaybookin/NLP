@@ -1,10 +1,11 @@
-# NLP :**N**o :**L**eft :**P**ass 🤣😂 Natural Language Processing
+# NLP :**N**o-**L**eft-**P**ass 🤣😂 Natural Language Processing
 
-### Session 1 : Basics of Neural Network
+### 1. Basics of Neural Network
 
-### Session 2 : Backpropagation
+### 2. Backpropagation
+- Working example in Excel
 
-### Session 3 : Custom Neural Network
+### 3. Building Custom Neural Network
  - Mix CONV and FC
  - Multiple Inputs & Outputs
  - Concatenate / Hack
@@ -30,3 +31,15 @@
 ### 7. Sequence to Sequence Model (Encoder Decoder )
  - Quora-Questions Pair dataset
  - Question-Answer dataset
+
+### 8. RIP torchtext.legacy.data
+ - Use new library of ```torchtext```
+
+### 9. Model Evaluation Metrics
+ - Classification 
+	-- Recall, Precision, and F1 Score
+
+ - Language Translation
+	-- BLEU
+	-- Perplexity 
+	-- BERTScore
